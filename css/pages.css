@@ -848,3 +848,21 @@
     text-align: center;
   }
 }
+
+/* ── About: Why section grid ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .why-image {
+    display: none;
+  }
+}
