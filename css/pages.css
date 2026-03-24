@@ -866,3 +866,166 @@
     display: none;
   }
 }
+
+/* ══════════════════════════════════════
+   SERVICES PAGE — New list layout
+   ══════════════════════════════════════ */
+
+.services-list {
+  padding: 80px 0 0;
+  background: var(--white);
+}
+
+.services-list__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.service-item {
+  padding: 3.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  position: relative;
+}
+
+/* Alternate background for visual rhythm */
+.service-item:nth-child(even) {
+  background: var(--off-white);
+}
+
+/* Right column items get a left border on desktop */
+.service-item:nth-child(even) {
+  border-left: 1px solid rgba(0,0,0,0.07);
+}
+.service-item:nth-child(odd):not(:first-child) {
+  border-left: none;
+}
+
+/* Last item (05) spans full width so it sits alone */
+.service-item:last-child {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border-left: none;
+  max-width: 720px;
+}
+
+.service-item__num {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.15);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.service-item__actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Services Gallery (bottom of services page) ── */
+.services-gallery {
+  background: var(--off-white);
+  padding: 80px 0;
+}
+
+.services-gallery__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.services-gallery__cell {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #ddd;
+}
+
+.services-gallery__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services-gallery__cell--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.services-gallery__cell--dark {
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.services-gallery__stat {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.services-gallery__stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ── About: full-width variants ── */
+.why-grid--full {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+}
+
+.about-fears__grid--full {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+}
+
+/* ── Responsive: Services list ── */
+@media (max-width: 900px) {
+  .services-list__grid {
+    grid-template-columns: 1fr;
+  }
+  .service-item {
+    padding: 2.5rem 1.5rem;
+    border-left: none !important;
+  }
+  .service-item:nth-child(even) {
+    border-left: none;
+  }
+  .service-item:last-child {
+    max-width: 100%;
+  }
+  .services-gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-gallery__cell--tall {
+    grid-row: span 1;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .service-item {
+    padding: 2rem 1.25rem;
+  }
+}
