@@ -61,7 +61,15 @@
         <span class="eyebrow">Pricing</span>
         <span class="gold-line gold-line--center"></span>
         <h2>Investment in your Nigerian business</h2>
-        <p>These rates reflect the depth of expertise, the quality of our network, and the real on-ground value we bring to every engagement.</p>
+        <p>These rates reflect the depth of expertise, the quality of our network, and the real on-ground value we bring to every engagement. Use the toggle below to view approximate equivalents in naira, dollars, and pounds.</p>
+      </div>
+      <div class="currency-switch reveal reveal-delay-1" aria-label="Currency selector">
+        <span class="currency-switch__label">View rates in</span>
+        <div class="currency-switch__buttons" role="tablist" aria-label="Choose currency">
+          <button type="button" class="currency-toggle" data-currency="ngn" aria-pressed="false">Naira</button>
+          <button type="button" class="currency-toggle" data-currency="usd" aria-pressed="false">Dollars</button>
+          <button type="button" class="currency-toggle active" data-currency="gbp" aria-pressed="true">Pounds</button>
+        </div>
       </div>
     </div>
   </section>
@@ -75,7 +83,7 @@
         <div class="rate-card reveal">
           <div class="rate-card__icon"><i class="fa-solid fa-comments"></i></div>
           <h3>One on One Consulting</h3>
-          <span class="rate-price">₦150,000</span>
+          <span class="rate-price" data-base-gbp="100">£100</span>
           <span class="rate-unit">per session</span>
           <p>Direct, focused sessions with Hassan O. Uthman to give you clarity and direction on building your Nigerian business.</p>
           <ul class="rate-includes">
@@ -93,7 +101,7 @@
           <div class="rate-badge">Most Popular</div>
           <div class="rate-card__icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3>Marketing & Growth Advisory</h3>
-          <span class="rate-price">₦800,000</span>
+          <span class="rate-price" data-base-gbp="500">£500</span>
           <span class="rate-unit">per month</span>
           <p>Ongoing monthly advisory for businesses launching or scaling into the Nigerian market with real expertise and guidance.</p>
           <ul class="rate-includes">
@@ -111,8 +119,8 @@
         <div class="rate-card reveal reveal-delay-2">
           <div class="rate-card__icon"><i class="fa-solid fa-people-group"></i></div>
           <h3>Leadership & Culture Consulting</h3>
-          <span class="rate-price">₦1,200,000</span>
-          <span class="rate-unit">per session or retreat</span>
+          <span class="rate-price" data-base-gbp="800">£800</span>
+          <span class="rate-unit">per session &amp; retreat</span>
           <p>Deep engagement for founders building strong teams and resilient company cultures in the Nigerian business environment.</p>
           <ul class="rate-includes">
             <li><i class="fa-solid fa-check"></i> Leadership assessment & coaching</li>
@@ -127,12 +135,12 @@
       </div>
 
       <!-- Speaking Row -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+      <div class="rates-speaking-row">
         <div class="rate-card reveal">
           <div class="rate-card__icon"><i class="fa-solid fa-microphone-lines"></i></div>
           <h3>Speaking — Local Events</h3>
-          <span class="rate-price">₦500,000</span>
-          <span class="rate-unit">from (Nigeria)</span>
+          <span class="rate-price" data-base-gbp="250">£250</span>
+          <span class="rate-unit">from</span>
           <p>Keynote and panel speaking for corporate events, conferences, and diaspora summits across Nigeria.</p>
           <ul class="rate-includes">
             <li><i class="fa-solid fa-check"></i> Keynote or panel session</li>
@@ -145,8 +153,8 @@
         <div class="rate-card reveal reveal-delay-1">
           <div class="rate-card__icon"><i class="fa-solid fa-plane"></i></div>
           <h3>Speaking — International Events</h3>
-          <span class="rate-price">$2,500</span>
-          <span class="rate-unit">from (USD)</span>
+          <span class="rate-price" data-base-gbp="1000">£1000</span>
+          <span class="rate-unit">from</span>
           <p>International speaking engagements for diaspora events, summits, and conferences outside Nigeria.</p>
           <ul class="rate-includes">
             <li><i class="fa-solid fa-check"></i> Keynote or panel session</li>
@@ -160,7 +168,6 @@
       <!-- Custom / Diaspora Business Building -->
       <div class="rate-custom reveal">
         <div class="rate-custom__left">
-          <div style="font-size: 1.6rem; margin-bottom: 0.75rem;">🌍</div>
           <h3>Diaspora Business Building & Custom Projects</h3>
           <p>
             Our flagship diaspora business building service and all custom partnerships are 
@@ -193,7 +200,7 @@
         <div style="text-align: center; padding: 2.5rem 2rem;">
           <div style="font-size: 2rem; margin-bottom: 1rem;">💡</div>
           <h4 style="color: var(--white); font-size: 1rem; margin-bottom: 0.75rem;">Clear ROI</h4>
-          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.75;">Every naira and dollar you invest should come back to you multiplied. We focus on outcomes, not just outputs.</p>
+          <p style="font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.75;">Every pound, naira, and dollar you invest should come back to you multiplied. We focus on outcomes, not just outputs.</p>
         </div>
       </div>
     </div>
@@ -250,7 +257,7 @@
             <i class="fa-solid fa-plus"></i>
           </button>
           <div class="faq-answer">
-            <p>We accept payment in Nigerian Naira (NGN), British Pounds (GBP), and US Dollars (USD) depending on the service and your location. We'll agree on the preferred currency during the engagement setup process.</p>
+            <p>We accept payment in Nigerian Naira (NGN), British Pounds (GBP), and US Dollars (USD). The rates page lets you toggle between all three for quick comparison, and we'll confirm your final billing currency during the engagement setup process.</p>
           </div>
         </div>
         <div class="faq-item">

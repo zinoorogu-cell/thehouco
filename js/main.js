@@ -91,6 +91,54 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(el => countObserver.observe(el));
   }
 
+  /* ── Rates currency toggle ── */
+  const currencyButtons = document.querySelectorAll('.currency-toggle');
+  const ratePrices = document.querySelectorAll('.rate-price[data-base-gbp]');
+  if (currencyButtons.length && ratePrices.length) {
+    const exchangeRates = {
+      gbp: 1,
+      usd: 1.28,
+      ngn: 2100
+    };
+
+    const currencySymbols = {
+      gbp: '£',
+      usd: '$',
+      ngn: '₦'
+    };
+
+    const roundAmount = (amount, currency) => {
+      if (currency === 'ngn') return Math.round(amount / 10000) * 10000;
+      if (currency === 'usd') return Math.round(amount / 10) * 10;
+      return Math.round(amount);
+    };
+
+    const formatAmount = (amount, currency) => {
+      const rounded = roundAmount(amount, currency);
+      return `${currencySymbols[currency]}${rounded.toLocaleString('en-GB')}`;
+    };
+
+    const updateRates = (currency) => {
+      currencyButtons.forEach(button => {
+        const isActive = button.dataset.currency === currency;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+
+      ratePrices.forEach(price => {
+        const baseGbp = Number(price.dataset.baseGbp || 0);
+        const convertedAmount = baseGbp * exchangeRates[currency];
+        price.textContent = formatAmount(convertedAmount, currency);
+      });
+    };
+
+    currencyButtons.forEach(button => {
+      button.addEventListener('click', () => updateRates(button.dataset.currency));
+    });
+
+    updateRates(document.querySelector('.currency-toggle.active')?.dataset.currency || 'gbp');
+  }
+
   /* ── FAQ accordion ── */
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
